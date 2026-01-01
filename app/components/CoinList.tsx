@@ -37,14 +37,14 @@ export default function CoinList({ coins }: Props) {
           <Link
             key={coin.id}
             href={`/coins/${coin.id}`}
-            className="border rounded-xl p-4 hover:shadow-lg transition block"
+            className="border rounded-xl p-4 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-colors duration-300"
           >
             <div className="flex items-center gap-3">
               <img src={coin.image} alt={coin.name} className="w-8 h-8" />
               <h2 className="font-semibold">{coin.name}</h2>
             </div>
 
-            <p className="mt-2 text-lg font-bold">
+            <p className="mt-2 text-lg font-bold text-black dark:text-white">
               ${coin.current_price.toLocaleString()}
             </p>
 
@@ -52,7 +52,7 @@ export default function CoinList({ coins }: Props) {
               className={
                 coin.price_change_percentage_24h > 0
                   ? 'text-green-600'
-                  : 'text-red-600'
+                  : 'text-red-500'
               }
             >
               {coin.price_change_percentage_24h.toFixed(2)}%
